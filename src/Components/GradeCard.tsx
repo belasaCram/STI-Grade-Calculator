@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import NumberFormatInput from './NumberFormatInput';
+import NumberFormatInput from './Utilities/NumberFormatInput';
+// import GetGradeStatus from './Utilities/GetGradeStatus';
 import { FiX } from 'react-icons/fi';
 
 interface GradeCardProps {
@@ -25,15 +26,15 @@ function GradeCard({ id, onRemove }: GradeCardProps) {
         }));
     };
 
-    // const totalGrade = Object.values(grades).reduce((acc, grade) => acc + (isNaN(grade) ? 0 : grade), 0);
+    const totalGrade = Object.values(grades).reduce((acc, grade) => acc + (isNaN(grade) ? 0 : grade), 0);
 
-    // const totalAverage = totalGrade / 4;
+    const totalAverage = totalGrade / 4;
 
-    const totalAverage =
-        (grades.Prelim * 0.2) +
-        (grades.Midterm * 0.2) +
-        (grades.PreFinals * 0.2) +
-        (grades.Finals * 0.6);
+    // const totalAverage =
+    //     (grades.Prelim * 0.2) +
+    //     (grades.Midterm * 0.2) +
+    //     (grades.PreFinals * 0.2) +
+    //     (grades.Finals * 0.6);
 
     return (
         <div className="border rounded-lg p-6 mb-4 shadow-lg max-w-full sm:max-w-2xl lg:max-w-4xl mx-auto bg-white">
@@ -94,7 +95,8 @@ function GradeCard({ id, onRemove }: GradeCardProps) {
             {/* Remarks Section */}
             <div className="mt-4">
                 <p className="text-base sm:text-lg font-semibold text-gray-700">
-                    Average: <span className="text-blue-600">{totalAverage.toFixed(2)}</span>
+                    Final Grade 
+                    <span className="text-blue-600">{totalAverage.toFixed(2)}</span>
                 </p>
             </div>
         </div>

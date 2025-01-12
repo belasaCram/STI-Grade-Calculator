@@ -1,7 +1,7 @@
 import Header from './Components/Header';
 import MainBody from './Components/MainBody';
 import Footer from './Components/Footer';
-import NumberParticles from './Components/NumberParticles';
+import NumberParticles from './Components/Utilities/NumberParticles';
 
 const App = () => {
   return (
